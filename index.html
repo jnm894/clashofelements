@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='styles.css'>
+    <script src='coe.js' defer></script>
+    <title>Clash of Elements</title>
+</head>
+<body>
+    <h1 class='glowy'>Clash of Elements</h1>
+    <div class='gameContainer'>
+        <div class='rpsButtonSection'>
+            <button class='selection' id='fire' value='Fire'>
+                🔥 
+                <div class='hidden'>FIRE</div>
+            </button>
+            <button class='selection' id='grass' value='Grass'>
+                🌿
+                <div class='hidden'>GRASS</div>
+            </button>
+            <button class='selection' id='water' value='Water'>
+                🌊
+                <div class='hidden'>WATER</div>
+            </button>
+        </div>
+        <div class='selectionDisplay'>
+            <div class='playerDisplay'>Player: -
+    
+            </div>
+            <div class='playerEmoji'></div>
+            <div class='computerDisplay'>Computer: -
+    
+            </div>
+            <div class='computerEmoji'></div>
+        </div>
+        <div class='gameData'>
+            <div class='roundDisplay'>Round: 1</div>
+            <div class='scoreTally'>
+                <div class='playerScore'>Player: 0</div>
+                <div class='computerScore'>Computer: 0</div>
+            </div>
+            <div class='winnerDisplay'> Winner: - </div>
+        </div>
+    </div>
+    <div class='uiButtonsContainer'>
+        <div class='resetContainer'>
+            <button class='resetButton'>Restart</button>
+        </div>
+        <div class='backButtonContainer'>
+            <button class='backButton'>Back</button>
+        </div>
+    </div>
+    <div class="instructions">
+        Welcome to Clash of Elements. Water puts out Fire, Fire burns Grass, and Grass absorbs Water.
+        The overall winner will be the one that wins 10 rounds first. 
+        Once in-game, you can use the restart button to reset the game and the back button to come back to this screen.
+    </div>
+    <div class='playButtonContainer'>
+        <button class='playButton'>PLAY</button>
+    </div>
+
+</body>
+</html>

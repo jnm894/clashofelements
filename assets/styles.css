@@ -1,0 +1,266 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+@-webkit-keyframes glowFire {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px goldenrod, 0 0 40px goldenrod, 0 0 50px goldenrod, 0 0 60px goldenrod, 0 0 70px goldenrod;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange, 0 0 80px orange;
+  }
+}
+
+@-webkit-keyframes glowGrass {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px lightgreen, 0 0 40px lightgreen, 0 0 50px lightgreen, 0 0 60px lightgreen, 0 0 70px lightgreen, 0 0 80px lightgreen;
+  }
+}
+
+@-webkit-keyframes glowWater {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px lightblue, 0 0 40px lightblue, 0 0 50px lightblue, 0 0 60px lightblue, 0 0 70px lightblue, 0 0 80px lightblue;
+  }
+}
+
+body {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: impact, sans-serif;
+}
+
+.glowy {
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.instructions{
+  display: flex;
+  margin: 5vw 15vh;
+  font-size: 1.2rem;
+  color: #ff4da6;
+  text-align: center;
+}
+
+.gameContainer{
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: rgba(181, 170, 170, 0.3);
+    border: 1px solid #ff4da6;
+    width: 33%;
+    margin: 1.75rem auto;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.rpsButtonSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    margin-bottom: 3vh;
+    width: 100%;
+}
+
+.selectionDisplay {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.gameData {
+    color: white;
+}
+
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.05s;
+    width: 33%;
+    height: 2.9rem;
+    padding: 0.25rem;
+    font-size: 1.02rem;
+    
+}
+
+button:hover {
+    font-weight: bold;
+}
+
+button:active {
+    color: white;
+    font-weight: bold;
+}
+
+#fire{
+  background-color: crimson;
+  animation: glowFire 1.5s ease-in-out infinite alternate;
+}
+
+#grass{
+  background-color: darkgreen;
+  animation: glowGrass 1.5s ease-in-out infinite alternate;
+}
+
+#water{
+  background-color: darkblue;
+  animation: glowWater 1.5s ease-in-out infinite alternate;
+}
+
+
+.playerDisplay, .computerDisplay{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 1.4rem;
+  color: white;
+}
+
+.playerDisplay {
+    width: 12rem;
+}
+
+.computerDisplay {
+    width: 12rem;
+}
+
+.winnerDisplay {
+    font-weight: bold;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.playerEmoji, .computerEmoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.4rem;
+    width: 2rem;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+#result-selection {
+    opacity: 0.65;
+}
+
+.scoreTally{
+  margin-bottom: 1rem;
+}
+
+#winner {
+    color: #ff4da6;
+    opacity: 0.9;
+    border: solid 5px #ff4da6;
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.playerDisplay#winner, .computerDisplay#winner {
+    justify-content: center;
+    margin-bottom: 0.25vh;
+    font-weight: bold;
+
+}
+
+.uiButtonsContainer{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.resetContainer, .backButtonContainer{
+  /*display: flex;*/
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.resetButton, .backButton{
+  background-color: #e60073;
+  width: 50%;
+}
+
+.resetButton:active{
+  opacity: 70%;
+}
+
+.backButton:active{
+  opacity: 70%;
+}
+
+.playButtonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+}
+
+.playButton{
+  background-color:rgba(181, 170, 170, 0.3);
+  border: 1px solid #e60073;
+  padding: 0.5 rem;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  animation: glow 1s ease-in-out infinite alternate;
+  height: 50%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 959px){
+  .glowy{
+    font-size: 2.5rem;
+  }
+
+  .rpsButtonSection{
+    gap: 1rem;
+    padding: none;
+  }
+
+  .selection{
+    width: 36%;
+    font-size: 1rem;
+    padding: 3px;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+}
+
+
