@@ -10,8 +10,8 @@ const computerScore = document.querySelector('.computerScore')
 const winnerDisplay = document.querySelector('.winnerDisplay')
 const playerEmoji = document.querySelector('.playerEmoji')
 const computerEmoji = document.querySelector('.computerEmoji')
-const RPSCHOICES = ['Fire', 'Grass', 'Water']
-const playerSelection = getPlayerChoice();
+const ElementChoices = ['Fire', 'Grass', 'Water']
+const playerSelection = playerChoice();
 const resetButton = document.querySelector('.resetButton')
 const gameContainer = document.querySelector('.gameContainer')
 const resetContainer = document.querySelector('.resetContainer')
@@ -41,13 +41,11 @@ backButton.addEventListener('click', function(){
     instructions.style.display = 'flex'
 })
 
-//getComputerChoice that wil randomly return either fire, grass or water
-
-function getComputerChoice() {
-    const ComputerChoice = Math.floor(Math.random() * RPSCHOICES.length);
-    return RPSCHOICES[ComputerChoice];
+function computerChoice() {
+    const computerChoice = Math.floor(Math.random() * ElementChoices.length);
+    return ElementChoices[computerChoice];
 }
-function getPlayerChoice() {
+function playerChoice() {
     buttons.forEach(button =>{
         button.addEventListener('click', function(){
             if (playerWin == 10) {
@@ -82,7 +80,7 @@ function getPlayerChoice() {
 
 function playRound(playerSelection) {
 
-    let computerSelection = getComputerChoice()
+    let computerSelection = computerChoice()
     computerDisplay.innerHTML = 'Computer: ' + computerSelection
     playerDisplay.id = 'result-selection'
     computerDisplay.id = 'result-selection'
